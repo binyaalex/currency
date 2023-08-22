@@ -10,29 +10,15 @@
   <h1>Currency Converter</h1>
 
   <div class="currency" id="main">
-    <img class="flag" src="usa_flag.png" alt="USD Flag">
+    <img class="flag" id="mainFlag" src="usd_flag.png" alt="USD Flag">
+    <span id="mainCurrency"></span>
   </div>
 
-  <label for="Amount">Enter amount in Dolars: </label>
+  <label for="Amount">Enter amount:</label>
   <input type="number" id="Amount" placeholder="Amount">
   <button id="convertButton">Convert</button>
   
-  <div class="currency" id="ils">
-    <img class="flag" src="il_flag.png" alt="ILS Flag">
-    <span id="ilsAmount"></span> ILS
-  </div>
-  <div class="currency" id="eur">
-    <img class="flag" src="eu_flag.png" alt="EUR Flag">
-    <span id="eurAmount"></span> EUR
-  </div>
-  <div class="currency" id="gbp">
-    <img class="flag" src="uk_flag.png" alt="GBP Flag">
-    <span id="gbpAmount"></span> GBP
-  </div>
-  <div class="currency" id="jpy">
-    <img class="flag" src="jp_flag.png" alt="JPY Flag">
-    <span id="jpyAmount"></span> JPY
-  </div>
+  <div id="othersContainer"></div>
 
   <script src="script.js"></script> <!-- Link to the external JavaScript file -->
 </body>
