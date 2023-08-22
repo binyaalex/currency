@@ -1,10 +1,19 @@
 const express = require('express');
+const path = require('path');
+const mime = require('mime'); // Import the 'mime' module
 const app = express();
-const PORT = process.env.PORT || 3000; // You can change the port number as needed
+const PORT = process.env.PORT || 3000;
 
-// Define a route for the homepage
+// Serve static files from the "public" directory
+app.use(express.static(path.join(__dirname, 'public'), {
+  setHeaders: (res, filePath) => {
+    res.setHeader('Content-Type', mime.getType(filePath)); // Set the appropriate content type
+  }
+}));
+
+// Define a route for the root URL
 app.get('/', (req, res) => {
-  res.send('Welcome to the Currency Exchange App');
+  res.sendFile(path.join(__dirname, 'public', 'index.html')); // Serve the HTML file
 });
 
 // Start the server
