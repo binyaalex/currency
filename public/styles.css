@@ -24,14 +24,14 @@ body {
   }
   
   /* Style for Shekel flag */
-  #shekel .flag {
+  #main .flag {
     width: 40px;
     height: 40px;
     margin-right: 0;
   }
   
   /* Style for input and button */
-  #shekelAmount,
+  #Amount,
   #convertButton {
     margin: 10px 0 20px;
   }

@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const { getExchangeRates } = require('./helpers/exchangeRate');
 const mime = require('mime'); // Import the 'mime' module
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -11,10 +12,15 @@ app.use(express.static(path.join(__dirname, 'public'), {
   }
 }));
 
-// Define a route for the root URL
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html')); // Serve the HTML file
-});
+app.get('/getExchangeRates', async (req, res) => {
+    try {
+      const exchangeRates = await getExchangeRates();
+      // Pass the exchangeRates data
+      res.json(exchangeRates);
+    } catch (error) {
+      res.status(500).send('An error occurred while fetching exchange rates.');
+    }
+  });
 
 // Start the server
 app.listen(PORT, () => {
