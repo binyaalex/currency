@@ -6,6 +6,7 @@ body {
     justify-content: center;
     height: 100vh;
     margin: 0;
+    margin-top: -75px;
   }
   
   .currency {
@@ -15,9 +16,11 @@ body {
   }
   
   .flag {
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
     margin-right: 5px;
+    border: 1px solid lightgray;
+    border-radius: 50%;
   }
   
   /* Style for Shekel flag */
@@ -30,6 +33,6 @@ body {
   /* Style for input and button */
   #shekelAmount,
   #convertButton {
-    margin-top: 10px;
+    margin: 10px 0 20px;
   }
   
